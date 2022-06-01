@@ -56,10 +56,30 @@ body {
 
 .drop-zone {
 	width: 49.5%;
-  height: 49.5%;
-  border: thin dashed white;
-  float: left;
+  	height: 49.5%;
+  	border: thin dashed white;
+  	float: left;
 	position: relative;
+}
+
+.drop-zone img {
+	width: 80% !important;
+	float: none;
+	position: absolute;
+	padding: 0;
+}
+
+.tr img {
+	bottom: 0;
+}
+
+.tl img {
+	right: 0;
+	bottom: 0;
+}
+
+.bl img {
+	right: 0;
 }
 
 
