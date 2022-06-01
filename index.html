@@ -11,17 +11,24 @@
 		<h1>drag and drop!</h1>
 		<p>solve the puzzle</p>
 	</header>
+
 	<section id="game-boards">
 		<!-- these are the draggable pieces -->
 		<div class="puzzle-pieces">
-			<img src="images/topLeft0.jpg" class="puzzle-image" alt="top left">
-			<img src="images/topRight0.jpg" class="puzzle-image" alt="top right">
-			<img src="images/bottomLeft0.jpg" class="puzzle-image" alt="bottom left">
-			<img src="images/bottomRight0.jpg" class="puzzle-image" alt="bottom right">
+			<img id="topLeft" draggable src="images/topLeft0.jpg" class="puzzle-image" alt="top left">
+			<img id="topRight" draggable src="images/topRight0.jpg" class="puzzle-image" alt="top right">
+			<img id="bottomLeft" draggable src="images/bottomLeft0.jpg" class="puzzle-image" alt="bottom left">
+			<img id="bottomRight" draggable src="images/bottomRight0.jpg" class="puzzle-image" alt="bottom right">
 		</div>
 
 		<!-- we want to drop the draggable pieces here -->
-		<div class="puzzle-board"></div>
+		<div class="puzzle-board">
+			<div class="drop-zone tl"></div>
+			<div class="drop-zone tr"></div>
+			<div class="drop-zone bl"></div>
+			<div class="drop-zone br"></div>
+		</div>
+
 	</section>
 
 	<footer>
