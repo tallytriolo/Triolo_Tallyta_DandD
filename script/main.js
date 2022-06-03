@@ -57,6 +57,7 @@
 		console.log("dropped on me");
 
 		let droppedElId = event.dataTransfer.getData("draggedEl");
+		// if this.childElementCount is greater than 0, dont execute anything else. Just exit the function.
 
 		//retrieve the dragged el by its ID, and then put it inside the current drop zone
 		this.appendChild(document.querySelector(`#${droppedElId}`));
