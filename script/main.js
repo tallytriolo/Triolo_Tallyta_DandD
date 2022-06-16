@@ -1,40 +1,39 @@
 (() => {
+	console.log('Welcome to the Puzzle Pieces Game');
 
 	let theThumbnails = document.querySelectorAll("#buttonHolder img"),
 
 		gameBoard = document.querySelector(".puzzle-board"),
 		pzlPieces = document.querySelectorAll('.puzzle-pieces img'),
 		dropZones = document.querySelectorAll(".drop-zone");
-		// zonePieces = document.querySelector('.puzzle-pieces');
-
-
-	const imageNames = ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'];
+		puzzleBoard = document.querySelector(".puzzle-pieces");
 
 	function changeImageSet() {
-		
 		gameBoard.style.backgroundImage = `url(images/backGround${this.dataset.bgref}.jpg)`;
-
-		let clickedThumb = this; 
-
-		pzlPieces.forEach((piece, index) => {
-			piece.src = `images/${imageNames[index] + clickedThumb.dataset.bgref}.jpg`;
-		});
+	
+		// 2º Bug - reset puzzle pieces when click in the Thumbnails //
+		dropZones.forEach(item => {item.innerHTML = ""});
+		
+		puzzleBoard.innerHTML = "";
+		pzlPieces[0].src = `images/topLeft${this.dataset.bgref}.jpg`;
+		pzlPieces[1].src = `images/topRight${this.dataset.bgref}.jpg`;
+		pzlPieces[2].src = `images/bottomLeft${this.dataset.bgref}.jpg`;
+		pzlPieces[3].src = `images/bottomRight${this.dataset.bgref}.jpg`;
+		pzlPieces.forEach(item => puzzleBoard.appendChild(item));
+		
 	}
 
 	function allowDrag(event) {
 		console.log("started draggin me");
-
 		event.dataTransfer.setData("draggedEl", this.id);
 	}
 
 	function allowDragOver(event) {
-		
 		event.preventDefault();
 		console.log("started draggin over me");
 	}
 
 	function allowDrop(event) {
-
 		event.preventDefault();
 
 		// 1º Bug - prevents two pieces from dropping in the same box //
@@ -50,17 +49,13 @@
 		this.appendChild(document.querySelector(`#${droppedElId}`));
 	}
 
-	// function resetPuzzle(){
-	// 	for (let loop = 0; loop < puzzlePieces.length; loop = loop + 1){
-	// 		zonePieces.appendChild(puzzlePieces[loop]);
-	// 	}
-	// }
-	
-	theThumbnails.forEach(item => 
+	theThumbnails.forEach(item =>
 		item.addEventListener("click", changeImageSet));
-		// item.addEventListener('click', resetPuzzle)
+		
+		
 
-	pzlPieces.forEach(piece => piece.addEventListener('dragstart', allowDrag));
+	pzlPieces.forEach(piece => 
+		piece.addEventListener('dragstart', allowDrag));
 	
 	//set up the drop zone event handling
 	dropZones.forEach(zone => {
@@ -68,6 +63,6 @@
 		zone.addEventListener("drop", allowDrop);
 	});
 	
-	// changeImageSet.call(theThumbnails[0]); // emulates a click on the first bottom button
+	changeImageSet.call(theThumbnails[0]); // emulates a click on the first bottom button
 
 })();
