@@ -4,8 +4,8 @@ Let's fix it and have fun!
 
 ========================================================================
 
-# NOTES
-[DEV NOTES - WRITTEN A PLAN](https://docs.google.com/document/d/1sTighZXJGEmqTjYsMhFVZGz6Wly3PjxPoLZPXuqPHOI/edit?usp=sharing)
+# DEV NOTES
+[WRITTEN A PLAN - GOOGLE DRIVE](https://docs.google.com/document/d/1sTighZXJGEmqTjYsMhFVZGz6Wly3PjxPoLZPXuqPHOI/edit?usp=sharing)
 
 ========================================================================
 
