@@ -53,6 +53,7 @@
 
 		let droppedElId = event.dataTransfer.getData("draggedEl");
 
+
 		// 1º Bug - prevents two pieces from dropping in the same box
 		// if this.childElementCount is greater than 0, dont execute anything else. Just exit/return the function.
 		if (this.childElementCount > 0){
@@ -61,6 +62,7 @@
 		//retrieve the dragged el by its ID, and then put it inside the current drop zone
 		this.appendChild(document.querySelector(`#${droppedElId}`));
 	}
+
 
 	// how to we want the user to interact with the elements that we collected earlier?
 	// events are things like clicks, drags, double-clickss, keypresses... all the ways that a user can interact with a mouse, a keyboard etc.
@@ -74,5 +76,6 @@
 		zone.addEventListener("dragover", allowDragOver);
 		zone.addEventListener("drop", allowDrop);
 	});
-	
+
 })();
+
